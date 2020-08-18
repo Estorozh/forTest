@@ -1,29 +1,30 @@
-import React from 'react'
-import {render} from 'react-dom'
-// import {Admin, Resource, EditGuesser} from 'react-admin'
-// import jsonServerProvider from 'ra-data-json-server'
-// import {UserList} from './users'
-// import {UserEdit} from './userEdit'
+import React, {useEffect, useState} from 'react'
+import Auth from '@c/auth/Auth'
+import Dashboard from '@c/Dashboard/Dashboard'
+import firebase from '@u/firebase'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+  } from "react-router-dom";
 
-// const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com')
-// const App = (props) => {
-//     return (
-//     <Admin dataProvider={dataProvider} >
-//         <Resource name='users' list={UserList} />
-//     </Admin>
-//     )
-// }
-// export default App
+const App = (props) => {
+const [firebaseInitialized, setFirebaseInitialized] = useState(false)
 
-export default class App extends React.Component {
-    render() {
-        return (<>
-            <h1 style={{textAlign:'center'}}>Login Block</h1>
-            <div style={{textAlign: "center"}}>
-                <input type="text" placeholder="name" /><br />
-                <input type="password" placeholder="password" style={{margin: '10px 0'}}/><br />
-                <input type="submit" value="login" />
-            </div>
-        </>)
-    }
+useEffect(() => {
+    firebase.isInitialized().then(val => {
+        setFirebaseInitialized(val)
+    })
+})
+
+return ( firebaseInitialized !== false ? (
+    <Router>
+        <Switch>
+            <Route exact path="/" component={Auth} />
+            <Route exact path="/dashboard" component={Dashboard} />
+        </Switch>
+    </Router>)
+    : (<span>Load...</span>)
+)
 }
+export default App

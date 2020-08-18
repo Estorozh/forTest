@@ -19,11 +19,13 @@ module.exports = {
         new BundleAnalyzerPlugin({openAnalyzer: false, analyzerMode: 'static'})
     ],
     devtool: 'inline-source-map',
+    devServer: {historyApiFallback: true},
     resolve: {
         extensions: ['.js', '.jsx', '.json', '.css'],
         alias: {
             '@c': path.resolve(__dirname, 'src/components'),
-            '@r': path.resolve(__dirname, 'redux')
+            '@r': path.resolve(__dirname, 'src/redux'),
+            '@u': path.resolve(__dirname, 'src/utils')
         }
     }
 }
