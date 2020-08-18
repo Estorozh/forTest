@@ -1,0 +1,13 @@
+{
+    "extends": ["airbnb", "airbnb/hooks", "prettier", "prettier/react"],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {"jsx": true}
+    },
+    "overrides": [{"files": "webpack.config.js"}],
+    "env": {
+        "browser": true,
+        "node": true
+    }
+}
