@@ -3,13 +3,13 @@ import 'firebase/auth'
 import 'firebase/firebase-firestore'
 
 var firebaseConfig = {
-    apiKey: "AIzaSyABqR1dzSbukwRzjTdZrudDYcBTQUi3QUY",
+    apiKey: "API_key",
     authDomain: "react-admin-753d6.firebaseapp.com",
     databaseURL: "https://react-admin-753d6.firebaseio.com",
     projectId: "react-admin-753d6",
     storageBucket: "react-admin-753d6.appspot.com",
-    messagingSenderId: "609072833111",
-    appId: "1:609072833111:web:6b6c134248d600ab70f912"
+    messagingSenderId: "MessageSenderId",
+    appId: "appId"
 };
 
 class Firebase {
@@ -28,10 +28,10 @@ class Firebase {
 		return this.auth.signOut()
 	}
 
-	async register(name, email, password) {
+	async register(email, password) {
 		await this.auth.createUserWithEmailAndPassword(email, password)
 		return this.auth.currentUser.updateProfile({
-			displayName: name
+			displayName: email.split('@')[0]
 		})
 	}
 

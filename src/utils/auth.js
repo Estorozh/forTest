@@ -2,6 +2,7 @@ import firebase from '@u/firebase'
 //переделать на firebase  с регистрацией.
 export default {
     login: ({ email, password }) => {
+        console.log(email, password)
         async function RequestFirebase() {
             try {
                 await firebase.login(email, password)

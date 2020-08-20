@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --hot --open --port 3000",
-    "build": "rm -rf dist/* && webpack --mode production",
+    "build": "webpack --mode production",
     "replace": "git add . && git commit --amend --no-edit",
     "test": "jest",
     "lint": "npx eslint --ext .jsx --fix"
