@@ -19,8 +19,9 @@ class Firebase {
 		this.db = app.firestore()
 	}
 
-	login(email, password) {
-		return this.auth.signInWithEmailAndPassword(email, password)
+	async login(email, password) {
+		return await this.auth.signInWithEmailAndPassword(email, password)
+
 	}
 
 	logout() {
