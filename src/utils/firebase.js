@@ -3,13 +3,13 @@ import 'firebase/auth'
 import 'firebase/firebase-firestore'
 
 var firebaseConfig = {
-    apiKey: "API_key",
+    apiKey: "AIzaSyABqR1dzSbukwRzjTdZrudDYcBTQUi3QUY",
     authDomain: "react-admin-753d6.firebaseapp.com",
     databaseURL: "https://react-admin-753d6.firebaseio.com",
     projectId: "react-admin-753d6",
     storageBucket: "react-admin-753d6.appspot.com",
-    messagingSenderId: "MessageSenderId",
-    appId: "appId"
+    messagingSenderId: "609072833111",
+    appId: "1:609072833111:web:6b6c134248d600ab70f912"
 };
 
 class Firebase {
